@@ -1,15 +1,15 @@
 import React from "react";
-import img from "../../../assets/images/doctor-small.png";
-
-const Footer = () => {
+import treatment from "../../../assets/images/treatment.png";
+const Container = () => {
   return (
-    <div class="footer p-10 bg-neutral text-neutral-content">
+    <div class="hero min-h-screen bg-base-200">
       <div class="hero-content flex-col lg:flex-row">
-        <img src={img} class="max-w-sm rounded-lg shadow-2xl" />
-        <div className="pl-20">
-          <h1 class="text-2xl font-bold text-secondary">Appointment</h1>
-          <h1 class="text-4xl font-bold">Make an appointment Today</h1>
-          <p class="py-6 text-1xl">
+        <img src={treatment} class="max-w-sm rounded-lg shadow-2xl" />
+        <div className="pl-10">
+          <h1 class="text-5xl font-bold">
+            Exceptional Dental Care, on Your Terms
+          </h1>
+          <p class="py-6">
             It is a long established fact that a reader will be distracted by
             the readable content of a page when looking at its layout. The point
             of using Lorem Ipsumis that it has a more-or-less normal
@@ -26,4 +26,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Container;

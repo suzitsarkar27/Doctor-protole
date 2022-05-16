@@ -9,6 +9,7 @@ import Contact from "./Pages/Home/Contact/Contact";
 import About from "./Pages/Home/About/About";
 import Login from "./Pages/Home/Login/Login";
 import NotFound from "./Pages/Sheard/NotFound/NotFound";
+import Footer from "./Pages/Sheard/Footer/Footer";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }
