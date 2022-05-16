@@ -13,11 +13,11 @@ const Review = ({ review }) => {
       <div className="flex items-center pl-10 mb-5">
         <div class="avatar">
           <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-            <img src="https://api.lorem.space/image/face?hash=3174" />
+            <img src={review.img} />
           </div>
         </div>
 
-        <div className="ml-10">
+        <div className="ml-5">
           <h4>{review.name}</h4>
           <p>{review.location}</p>
         </div>

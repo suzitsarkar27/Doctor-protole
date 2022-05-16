@@ -5,6 +5,7 @@ import Banner from "../Banner/Banner";
 import Container from "../Container/Container";
 import Infro from "../Infro/Infro";
 import Services from "../Services/Services";
+import ContactsFrom from "../ContactsFrom/ContactsFrom";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <Container></Container>
       <Appointments></Appointments>
       <AppointmentReviews></AppointmentReviews>
+      <ContactsFrom></ContactsFrom>
     </div>
   );
 };
