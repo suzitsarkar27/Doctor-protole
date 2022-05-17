@@ -6,6 +6,7 @@ import Container from "../Container/Container";
 import Infro from "../Infro/Infro";
 import Services from "../Services/Services";
 import ContactsFrom from "../ContactsFrom/ContactsFrom";
+import Footer from "../../Sheard/Footer/Footer";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <Appointments></Appointments>
       <AppointmentReviews></AppointmentReviews>
       <ContactsFrom></ContactsFrom>
+      <Footer></Footer>
     </div>
   );
 };
