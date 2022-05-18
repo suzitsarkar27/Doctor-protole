@@ -1,0 +1,10 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "fira mono",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "files.autoSave": "onFocusChange",
+  "editor.insertSpaces": true,
+  "editor.wordWrap": "on",
+  "editor.accessibilitySupport": "off"
+}
