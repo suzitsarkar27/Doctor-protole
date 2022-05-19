@@ -1,5 +1,6 @@
 import React from "react";
 import img from "../../../assets/images/doctor.png";
+import bg from "../../../assets/images/bg.png";
 const Appointments = () => {
   return (
     <div class="footer p-10 bg-neutral text-neutral-content mt-20">

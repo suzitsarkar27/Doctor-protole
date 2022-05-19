@@ -6,5 +6,6 @@
   "files.autoSave": "onFocusChange",
   "editor.insertSpaces": true,
   "editor.wordWrap": "on",
-  "editor.accessibilitySupport": "off"
+  "editor.accessibilitySupport": "off",
+  "diffEditor.wordWrap": "off"
 }

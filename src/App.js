@@ -9,6 +9,7 @@ import Contact from "./Pages/Home/Contact/Contact";
 import About from "./Pages/Home/About/About";
 import Login from "./Pages/Home/Login/Login";
 import NotFound from "./Pages/Sheard/NotFound/NotFound";
+import SingUp from "./Pages/Home/SingUp/SingUp";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/contact" element={<Contact></Contact>}></Route>
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/reagister" element={<SingUp></SingUp>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
     </div>
