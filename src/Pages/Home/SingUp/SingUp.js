@@ -2,26 +2,33 @@ import React, { useRef } from "react";
 import {
   useCreateUserWithEmailAndPassword,
   useSignInWithGoogle,
+  useUpdateProfile,
 } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../UseFirebse/Firebase.init";
+import Loding from "../../Loding/Loding";
 
 const SingUp = () => {
+  const namelRef = useRef("");
   const emailRef = useRef("");
   const passwordRef = useRef("");
   const repasswordRef = useRef("");
 
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
+
   const [signInWithGoogle] = useSignInWithGoogle(auth);
 
-  const handelSubmit = (e) => {
+  const navigate = useNavigate();
+
+  const handelSubmit = async (e) => {
     e.preventDefault();
+    const name = namelRef.current.value;
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     const repassword = repasswordRef.current.value;
-    createUserWithEmailAndPassword(email, password, repassword);
-    console.log(email, password, repassword);
+    await createUserWithEmailAndPassword(email, password, repassword);
+    navigate("/appointment");
   };
   return (
     <div className="flex justify-center items-center h-screen">
@@ -29,6 +36,17 @@ const SingUp = () => {
         <div class="hero-content flex-col lg:flex-row-reverse ">
           <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl w-96     bg-base-100">
             <form onSubmit={handelSubmit} class="card-body">
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Name</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Name"
+                  ref={namelRef}
+                  class="input input-bordered"
+                />
+              </div>
               <div class="form-control">
                 <label class="label">
                   <span class="label-text">Email</span>

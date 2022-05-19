@@ -3,26 +3,39 @@ import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../UseFirebse/Firebase.init";
+import Loding from "../../Loding/Loding";
 
 const Login = () => {
-  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
+  const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
 
   const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+  let singInError;
 
-  const handelSubmit = (e) => {
+  if (error) {
+    singInError = (
+      <p className="text-red-600">{error?.message || gerror?.emessage}</p>
+    );
+  }
+
+  const handelSubmit = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    signInWithEmailAndPassword(email, password);
-    navigate("/home");
+    await signInWithEmailAndPassword(email, password);
   };
 
-  if (user) {
-    console.log(user);
-    navigate("/home");
+  if (loading) {
+    return <Loding></Loding>;
+  }
+
+  if (user || guser) {
+    navigate(from, { replace: true });
   }
   return (
     <div className="flex justify-center items-center h-screen">
@@ -39,6 +52,7 @@ const Login = () => {
                   placeholder="email"
                   name="email"
                   class="input input-bordered"
+                  required
                 />
               </div>
               <div class="form-control">
@@ -50,6 +64,7 @@ const Login = () => {
                   placeholder="password"
                   name="password"
                   class="input input-bordered"
+                  required
                 />
                 <label class="label">
                   <a href="#" class="label-text-alt link link-hover">
@@ -57,6 +72,7 @@ const Login = () => {
                   </a>
                 </label>
               </div>
+              {singInError}
               <div class="form-control mt-6">
                 <button class="btn btn-primary text-white">Login</button>
               </div>

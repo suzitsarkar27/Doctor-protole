@@ -10,6 +10,7 @@ import About from "./Pages/Home/About/About";
 import Login from "./Pages/Home/Login/Login";
 import NotFound from "./Pages/Sheard/NotFound/NotFound";
 import SingUp from "./Pages/Home/SingUp/SingUp";
+import RequreAuth from "./Pages/RequreAuth/RequreAuth";
 
 function App() {
   return (
@@ -20,8 +21,13 @@ function App() {
         <Route path="/home" element={<Home></Home>}></Route>
         <Route
           path="/appointment"
-          element={<Appointment></Appointment>}
+          element={
+            <RequreAuth>
+              <Appointment></Appointment>
+            </RequreAuth>
+          }
         ></Route>
+
         <Route path="/reviews" element={<Reviews></Reviews>}></Route>
         <Route path="/contact" element={<Contact></Contact>}></Route>
         <Route path="/about" element={<About></About>}></Route>
