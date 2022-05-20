@@ -13,15 +13,15 @@ const ContactsFrom = () => {
           <input
             type="email"
             placeholder="Type Your Email"
-            class="input input-bordered input-info w-full max-w-xs"
+            className="input input-bordered input-info w-full max-w-xs"
           />
           <input
             type="text"
             placeholder="Type Subject"
-            class="input input-bordered input-info w-full max-w-xs mt-5"
+            className="input input-bordered input-info w-full max-w-xs mt-5"
           />
           <textarea
-            class="textarea textarea-info w-full max-w-xs mt-5"
+            className="textarea textarea-info w-full max-w-xs mt-5"
             placeholder="Bio"
           ></textarea>
           <br />

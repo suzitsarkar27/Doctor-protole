@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
@@ -9,6 +9,7 @@ import Loding from "../../Loding/Loding";
 
 const Login = () => {
   const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
+  console.log(guser);
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
@@ -23,6 +24,10 @@ const Login = () => {
     );
   }
 
+  if (user || guser) {
+    navigate(from, { replace: true });
+  }
+
   const handelSubmit = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -34,47 +39,44 @@ const Login = () => {
     return <Loding></Loding>;
   }
 
-  if (user || guser) {
-    navigate(from, { replace: true });
-  }
   return (
     <div className="flex justify-center items-center h-screen">
-      <div class="hero min-h-screen ">
-        <div class="hero-content flex-col lg:flex-row-reverse ">
-          <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl  w-96 bg-base-100">
-            <form onSubmit={handelSubmit} class="card-body">
-              <div class="form-control">
-                <label class="label">
-                  <span class="label-text">Email</span>
+      <div className="hero min-h-screen ">
+        <div className="hero-content flex-col lg:flex-row-reverse ">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl  w-96 bg-base-100">
+            <form onSubmit={handelSubmit} className="card-body">
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Email</span>
                 </label>
                 <input
                   type="text"
                   placeholder="email"
                   name="email"
-                  class="input input-bordered"
+                  className="input input-bordered"
                   required
                 />
               </div>
-              <div class="form-control">
-                <label class="label">
-                  <span class="label-text">Password</span>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Password</span>
                 </label>
                 <input
                   type="text"
                   placeholder="password"
                   name="password"
-                  class="input input-bordered"
+                  className="input input-bordered"
                   required
                 />
-                <label class="label">
-                  <a href="#" class="label-text-alt link link-hover">
+                <label className="label">
+                  <a href="#" className="label-text-alt link link-hover">
                     Forgot password?
                   </a>
                 </label>
               </div>
               {singInError}
-              <div class="form-control mt-6">
-                <button class="btn btn-primary text-white">Login</button>
+              <div className="form-control mt-6">
+                <button className="btn btn-primary text-white">Login</button>
               </div>
               <p>
                 l have a no account :
@@ -82,8 +84,8 @@ const Login = () => {
                   Reagister Now
                 </Link>{" "}
               </p>
-              <div class="flex flex-col w-full border-opacity-50">
-                <div class="divider">OR</div>
+              <div className="flex flex-col w-full border-opacity-50">
+                <div className="divider">OR</div>
               </div>
               <button
                 onClick={() => signInWithGoogle()}

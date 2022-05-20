@@ -32,61 +32,61 @@ const SingUp = () => {
   };
   return (
     <div className="flex justify-center items-center h-screen">
-      <div class="hero min-h-screen ">
-        <div class="hero-content flex-col lg:flex-row-reverse ">
-          <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl w-96     bg-base-100">
-            <form onSubmit={handelSubmit} class="card-body">
-              <div class="form-control">
-                <label class="label">
-                  <span class="label-text">Name</span>
+      <div className="hero min-h-screen ">
+        <div className="hero-content flex-col lg:flex-row-reverse ">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl w-96     bg-base-100">
+            <form onSubmit={handelSubmit} className="card-body">
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Name</span>
                 </label>
                 <input
                   type="text"
                   placeholder="Name"
                   ref={namelRef}
-                  class="input input-bordered"
+                  className="input input-bordered"
                 />
               </div>
-              <div class="form-control">
-                <label class="label">
-                  <span class="label-text">Email</span>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Email</span>
                 </label>
                 <input
                   type="email"
                   placeholder="Email"
                   ref={emailRef}
-                  class="input input-bordered"
+                  className="input input-bordered"
                 />
               </div>
-              <div class="form-control">
-                <label class="label">
-                  <span class="label-text">Password</span>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Password</span>
                 </label>
                 <input
                   type="password"
                   placeholder="Password"
                   ref={passwordRef}
-                  class="input input-bordered"
+                  className="input input-bordered"
                 />
               </div>
-              <div class="form-control">
-                <label class="label">
-                  <span class="label-text">Re-Password</span>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Re-Password</span>
                 </label>
                 <input
                   type="password"
                   ref={repasswordRef}
                   placeholder="Re-Password"
-                  class="input input-bordered"
+                  className="input input-bordered"
                 />
-                <label class="label">
-                  <a href="#" class="label-text-alt link mt-2 link-hover">
+                <label className="label">
+                  <a href="#" className="label-text-alt link mt-2 link-hover">
                     Forgot password?
                   </a>
                 </label>
               </div>
-              <div class="form-control mt-6">
-                <button class="btn btn-primary text-white">Login</button>
+              <div className="form-control mt-6">
+                <button className="btn btn-primary text-white">Login</button>
               </div>
               <p>
                 Allready have accound :{" "}
@@ -94,13 +94,13 @@ const SingUp = () => {
                   Login Now
                 </Link>
               </p>
-              <div class="flex flex-col w-full border-opacity-50">
-                <div class="divider">OR</div>
+              <div className="flex flex-col w-full border-opacity-50">
+                <div className="divider">OR</div>
                 <input
                   type="submit"
                   onClick={() => signInWithGoogle()}
                   value={"Sing In Google"}
-                  class="input input-bordered btn btn-primary text-white"
+                  className="input input-bordered btn btn-primary text-white"
                 />
               </div>
             </form>
